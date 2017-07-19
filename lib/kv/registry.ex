@@ -22,7 +22,9 @@ defmodule KV.Registry do
   # Server Callbacks
 
   def init(:ok) do
-    {:ok, %{}}
+    names = %{}
+    refs  = %{}
+    {:ok, {names, refs}}
   end
 
   def handle_call({:lookup, name}, _from, names) do
